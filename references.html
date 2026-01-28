@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional References - Norman Keith T. Gopico</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="content-page">
+
+    <section class="section-container">
+        <header class="page-title">
+            <h1>Professional References</h1>
+            <hr class="title-accent">
+        </header>
+
+        <div class="reference-grid">
+            <article class="info-card">
+                <div class="card-icon">🎓</div>
+                <div class="card-details">
+                    <h3>Dr. Melvin Cabatuan</h3>
+                    <p class="position">Professor, Department of Computer Engineering</p>
+                    <p class="organization">De La Salle University</p>
+                    <hr class="card-divider">
+                    <ul class="contact-info">
+                        <li><strong>Email:</strong> melvin.cabatuan@dlsu.edu.ph</li>
+                        <li><strong>Relationship:</strong> Academic Professor</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="info-card">
+                <div class="card-icon">💼</div>
+                <div class="card-details">
+                    <h3>Engr. Alex Rivera</h3>
+                    <p class="position">Senior Lead Engineer</p>
+                    <p class="organization">TechBuild Solutions</p>
+                    <hr class="card-divider">
+                    <ul class="contact-info">
+                        <li><strong>Contact:</strong> +63 912 345 6789</li>
+                        <li><strong>Relationship:</strong> Internship Supervisor</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+
+        <div class="form-container">
+            <h3>Request Formal Reference</h3>
+            <p>If you require a signed recommendation letter for professional or academic purposes, please use the interactive form below.</p>
+            
+            <form action="mailto:norman_gopico@dlsu.edu.ph" method="post" enctype="text/plain" class="reference-form">
+                <div class="form-group">
+                    <label for="req_name">Requestor Name:</label>
+                    <input type="text" id="req_name" name="req_name" placeholder="Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="req_type">Request Type:</label>
+                    <select id="req_type" name="req_type">
+                        <option value="employment">Employment Reference</option>
+                        <option value="academic">Academic Recommendation</option>
+                        <option value="general">General Character Reference</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="req_notes">Additional Notes:</label>
+                    <textarea id="req_notes" name="req_notes" rows="4"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                    <button type="reset" class="btn-reset">Clear</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+</body>
+</html>
