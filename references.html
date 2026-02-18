@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional References - Norman Keith T. Gopico</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js" defer></script>
 </head>
 <body class="content-page">
 
@@ -46,12 +47,20 @@
 
         <div class="form-container">
             <h3>Request Formal Reference</h3>
-            <p>If you require a signed recommendation letter for professional or academic purposes, please use the interactive form below.</p>
+            <p>If you require a signed recommendation letter, please use the interactive form below.</p>
             
-            <form action="mailto:norman_gopico@dlsu.edu.ph" method="post" enctype="text/plain" class="reference-form">
+            <form action="https://formsubmit.co/norman_gopico@dlsu.edu.ph" method="POST" class="reference-form">
+                <input type="hidden" name="_subject" value="New Message from Portfolio">
+                <input type="hidden" name="_captcha" value="false">
+
                 <div class="form-group">
-                    <label for="req_name">Requestor Name:</label>
-                    <input type="text" id="req_name" name="req_name" placeholder="Your Name">
+                    <label for="name">Requestor Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Requestor Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
@@ -64,8 +73,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="req_notes">Additional Notes:</label>
-                    <textarea id="req_notes" name="req_notes" rows="4"></textarea>
+                    <label for="message">Additional Notes:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
 
                 <div class="form-actions">
@@ -74,7 +83,6 @@
                 </div>
             </form>
         </div>
-
     </section>
 
 </body>

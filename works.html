@@ -77,9 +77,70 @@
                     </div>
                 </div>
             </article>
+
+            <article class="project-item">
+                <header class="project-header">
+                    <h3>Lab 6: Interactive Physics Sandbox</h3>
+                    <span class="project-tag">DOM MANIPULATION | ANIMATION</span>
+                </header>
+                <div class="project-content">
+                    <p>Click and drag the ball to test momentum and boundary detection logic.</p>
+                    <div class="lab-sandbox" id="sandbox">
+                        <div id="ball"></div>
+                    </div>
+                </div>
+            </article>
         </div>
 
     </section>
 
+    <script>
+        const ball = document.getElementById("ball");
+        const area = document.getElementById("sandbox");
+        let x = 50, y = 50, vx = 5, vy = 5;
+        let dragging = false;
+        let lastX, lastY;
+
+        function move() {
+            if (!dragging) {
+                x += vx;
+                y += vy;
+                
+                if (x <= 0 || x + 50 >= area.offsetWidth) vx *= -0.8;
+                if (y <= 0 || y + 50 >= area.offsetHeight) vy *= -0.8;
+                
+                x = Math.max(0, Math.min(x, area.offsetWidth - 50));
+                y = Math.max(0, Math.min(y, area.offsetHeight - 50));
+                
+                vx *= 0.99;
+                vy *= 0.99;
+                vy += 0.2; 
+            }
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+            requestAnimationFrame(move);
+        }
+
+        ball.onmousedown = (e) => {
+            dragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        };
+
+        window.onmousemove = (e) => {
+            if (dragging) {
+                let rect = area.getBoundingClientRect();
+                vx = e.clientX - lastX;
+                vy = e.clientY - lastY;
+                x = e.clientX - rect.left - 25;
+                y = e.clientY - rect.top - 25;
+                lastX = e.clientX;
+                lastY = e.clientY;
+            }
+        };
+
+        window.onmouseup = () => dragging = false;
+        move();
+    </script>
 </body>
 </html>
